@@ -1,6 +1,6 @@
 # SheriffGallery
 Photo Gallery for Sheriffen Adventures
-Follow Sheriffen's epic quest around the world. Site will be integrated to Google Maps to see where the photos has been taken.
+Follow Sheriffen's epic quest around the world. Site will be integrated to Google Maps and will point out Sheriffen's whereabouts. 
 
 Work in progress. 
 Currently working on backend repositories.
@@ -9,7 +9,7 @@ Currently working on backend repositories.
 Productivity Tools Installed
 Nunit3 Test Adapter required to run unit tests: https://visualstudiogallery.msdn.microsoft.com/0da0f6bd-9bb6-4ae3-87a8-537788622f2d
 
-Dependencies
+Dependencies:
 Nunit
 Ninject
 Moq
