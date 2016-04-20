@@ -19,5 +19,6 @@ namespace Web.Infrastructure.Repository
         List<PhotoItem> ReadPhotoItems();
         bool DeleteComment(Comment comment);
         List<Comment> ReadComments();
+        bool UpdateComment(Comment comment);
     }
 }

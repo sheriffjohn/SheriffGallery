@@ -34,7 +34,14 @@ namespace Web.Tests.IntegrationTest
             _repository.CreateOrUpdateUser(user);
                             
             Assert.AreEqual("Jane", context.Users.Find(user.Id).Name);          
-        }        
+        }
+
+        [Test]
+        public void DeleteUserTest()
+        {
+            //Not implemented
+        }
+
 
         [Test]
         public void CreatePhotoItemWithCommentsTest()
@@ -77,31 +84,43 @@ namespace Web.Tests.IntegrationTest
 
         [Test]
         public void UpdateCommentsTest()
-        {          
-            //
-            //_repository.CreateOrUpdatePhotoItem(_item);
+        {
+            //Arrange
+            var context = new EFDbContext();
 
-            //PhotoItem item = _repository.ReadPhotoItems().FirstOrDefault();
+            var userA = new User() { Id = 1, Name = "Bill" };
+            var userB = new User() { Id = 2, Name = "Steven" };
+            var commentA = new Comment() { Text = "Lovely dress!", UserName = userB.Name, TimeStamp = DateTime.Now };
+            PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "Inside Opera", Country = "Australia", Location = "Sidney", Latitude = 11.2, Longitude = 2.6, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
 
-            //var list = _repository.ReadPhotoItems().Where(x => x.Id == item.Id).ToList();
+            photoitem.AddComment(commentA);
 
-            //Assert.IsNotNull(list);
+            _repository.CreateOrUpdatePhotoItem(photoitem);
+
+            //Act            
+            var comment = _repository.ReadComments().FirstOrDefault();
+            comment.Text = "Changed my mind about your dress! It is amazing!";
+
+            _repository.UpdateComment(comment);
+
+            var result = context.Comments.Where(x => x.Id == comment.Id).FirstOrDefault();
+
+            Assert.AreEqual("Changed my mind about your dress! It is amazing!", result.Text);
         }
         
         [Test]
         public void CreatePhotoItemTest()
         {
+            var context = new EFDbContext();
+
             var userA = new User() { Id = 1, Name = "Henning" };
             PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "Central City", Country = "Germany", Location = "Berlin", Latitude = 1.2, Longitude = 2.6, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
 
-            using (var context = new EFDbContext())
-            {
-               context.PhotoItems.Add(photoitem);
-               context.SaveChanges();
+            _repository.CreateOrUpdatePhotoItem(photoitem);
+            
+            var result = context.PhotoItems.FirstOrDefault();
 
-               var item = context.PhotoItems.FirstOrDefault();
-               Assert.IsNotNull(item);
-            }
+            Assert.IsNotNull(result);
         }
 
         [Test]

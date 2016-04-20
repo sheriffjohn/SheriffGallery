@@ -25,7 +25,7 @@ namespace Web.Infrastructure.Repository
 
             _context.SaveChanges();
             
-            if (_context.Comments.Where(x => x.Id == item.Id).Count() > 0)
+            if (_context.PhotoItems.Where(x => x.Id == item.Id).Count() > 0)
                 return true;
             else
                 return false;
@@ -95,6 +95,16 @@ namespace Web.Infrastructure.Repository
         public List<Comment> ReadComments()
         {
             return _context.Comments.ToList();
+        }
+
+        public bool UpdateComment(Comment comment)
+        {
+            _context.SaveChanges();
+
+            if (_context.Comments.Where(x => x.Id == comment.Id).FirstOrDefault().Text != comment.Text)
+                return true;
+            else
+                return false;
         }
     }
 }
