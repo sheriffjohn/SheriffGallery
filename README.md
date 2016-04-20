@@ -16,3 +16,5 @@ Moq
 Knockout.js
 Web Api
 Bootstrap CSS
+
+![alt tag](https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG)
