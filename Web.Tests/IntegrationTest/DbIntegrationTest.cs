@@ -77,8 +77,7 @@ namespace Web.Tests.IntegrationTest
 
         [Test]
         public void UpdateCommentsTest()
-        {          
-            //
+        {    
             //_repository.CreateOrUpdatePhotoItem(_item);
 
             //PhotoItem item = _repository.ReadPhotoItems().FirstOrDefault();
@@ -92,7 +91,7 @@ namespace Web.Tests.IntegrationTest
         public void CreatePhotoItemTest()
         {
             var userA = new User() { Id = 1, Name = "Henning" };
-            PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "Central City", Country = "Germany", Location = "Berlin", Latitude = 1.2, Longitude = 2.6, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
+            PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "Best pub in towns", Country = "Germany", Location = "Berlin", Latitude = 1.2, Longitude = 2.6, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
 
             using (var context = new EFDbContext())
             {
