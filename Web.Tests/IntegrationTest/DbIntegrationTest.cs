@@ -78,7 +78,7 @@ namespace Web.Tests.IntegrationTest
         [Test]
         public void UpdateCommentsTest()
         {          
-
+            //
             //_repository.CreateOrUpdatePhotoItem(_item);
 
             //PhotoItem item = _repository.ReadPhotoItems().FirstOrDefault();
