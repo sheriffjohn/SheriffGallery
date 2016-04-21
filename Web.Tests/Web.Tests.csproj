@@ -95,14 +95,14 @@
     <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Web\Web.csproj">
-      <Project>{93FDD9FE-C4B0-455F-9656-CB829C4B5617}</Project>
-      <Name>Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Web.Api\Web.Api.csproj">
+      <Project>{93fdd9fe-c4b0-455f-9656-cb829c4b5617}</Project>
+      <Name>Web.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

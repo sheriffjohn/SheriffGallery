@@ -2,9 +2,9 @@
 using System;
 using System.IO;
 using System.Linq;
-using Web.Infrastructure;
-using Web.Infrastructure.Repository;
-using Web.Models;
+using Web.Api.Infrastructure;
+using Web.Api.Infrastructure.Repository;
+using Web.Api.Models;
 
 namespace Web.Tests.IntegrationTest
 {
