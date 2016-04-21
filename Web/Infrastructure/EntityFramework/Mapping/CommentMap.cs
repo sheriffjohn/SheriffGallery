@@ -16,6 +16,8 @@ namespace Web.Infrastructure.EntityFramework.Mapping
 
             this.Property(p => p.RowId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            this.Ignore<PhotoItem>(p => p.PhotoItem);
+
             this.Property(p => p.Text)
                 .IsRequired()
                 .HasMaxLength(250);

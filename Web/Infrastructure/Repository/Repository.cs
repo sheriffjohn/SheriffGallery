@@ -54,7 +54,7 @@ namespace Web.Infrastructure.Repository
 
         public List<PhotoItem> ReadPhotoItems()
         {
-            return _context.PhotoItems.ToList();
+            return _context.PhotoItems.Include(c => c.Comments).Include(p => p.Photo).ToList();
         }
               
         public List<User> ReadUsers()

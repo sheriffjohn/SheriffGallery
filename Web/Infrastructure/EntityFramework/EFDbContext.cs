@@ -23,7 +23,7 @@ namespace Web.Infrastructure
             modelBuilder.Configurations.Add(new UserMap());
             modelBuilder.Configurations.Add(new CommentMap());
             modelBuilder.Configurations.Add(new PhotoMap());
-            modelBuilder.Configurations.Add(new RoleMap());
+            modelBuilder.Configurations.Add(new RoleMap());            
         }
     }
     public class EFDbInitializer : CreateDatabaseIfNotExists<EFDbContext>

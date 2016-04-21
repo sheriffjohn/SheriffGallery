@@ -64,6 +64,13 @@ namespace Web.Tests.IntegrationTest
             Assert.IsTrue(_repository.ReadUsers().Count() > 0);
         }
 
+        [Test]
+        public void ReadPhotoItemsTest()
+        {
+            var result = _repository.ReadPhotoItems().Count();
+
+            Assert.IsTrue(result > 0);
+        }
 
         [Test]
         public void CreatePhotoItemWithCommentsTest()
@@ -149,16 +156,39 @@ namespace Web.Tests.IntegrationTest
         public void DeletePhotoItemTest()
         {
             var item = _repository.ReadPhotoItems().FirstOrDefault();
+
+            if (item == null)
+            {
+                //Arrange
+                //Setup a PhotoItem
+                var userA = new User() { Id = 1, Name = "Teddy", Role_FK = (int)Permission.Guest };
+                var userB = new User() { Id = 2, Name = "Cathrine", Role_FK = (int)Permission.Administrator };
+
+                PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "In the Dessert..", Country = "USA", Location = "Salt Lake City", Latitude = 1.1, Longitude = 2.2, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
+                _repository.CreateOrUpdatePhotoItem(photoitem);
+
+                var commentA = new Comment() { Text = "What a day!", UserName = userA.Name, TimeStamp = DateTime.Now };
+                var commentB = new Comment() { Text = "Good photo", UserName = userB.Name, TimeStamp = DateTime.Now };
+
+                //Act
+                photoitem.AddComment(commentA);
+                photoitem.AddComment(commentB);
+
+                _repository.CreateOrUpdatePhotoItem(photoitem);
+            }
+
+            item = _repository.ReadPhotoItems().FirstOrDefault();
+
             _repository.DeletePhotoItem(item);
-            
+
             var context = new EFDbContext();
             var itemresult = context.PhotoItems.Find(item.Id);
-            var photoresult = context.Photos.Where(p => p.PhotoItem.Id == item.Id);
+            var photoresult = context.Photos.Find(item.Id);
             var commentresult = context.Comments.Where(p => p.PhotoItem_FK == item.Id);
-            
+
             Assert.IsNull(itemresult);
-            Assert.IsEmpty(photoresult);
-            Assert.IsEmpty(commentresult);           
+            Assert.IsNull(photoresult);
+            Assert.IsEmpty(commentresult);
         }
     }
 }

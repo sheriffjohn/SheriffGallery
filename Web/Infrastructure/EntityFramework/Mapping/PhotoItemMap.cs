@@ -15,7 +15,7 @@ namespace Web.Infrastructure.EntityFramework.Mapping
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             this.Property(p => p.RowId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
+            
             this.Property(p => p.Info)
                 .IsRequired()
                 .HasMaxLength(250);

@@ -16,9 +16,9 @@ namespace Web.Infrastructure.EntityFramework.Mapping
             this.HasKey(k => k.Id);
 
             //Properties
-            //this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
             this.Property(p => p.RowId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            
+            this.Ignore<PhotoItem>(p => p.PhotoItem);
 
             this.Property(p => p.Binary)
                .IsRequired()

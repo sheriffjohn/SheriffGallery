@@ -12,7 +12,6 @@ namespace Web.Models
         {
             _comments = new List<Comment>();
         }
-
         public string UserName { get; set; }
         public Photo Photo { get; set; }
         public DateTime TimeStamp { get; set; }
@@ -22,15 +21,9 @@ namespace Web.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public IList<Comment> Comments { get { return _comments; } }
-
         public void AddComment(Comment comment)
         {
             _comments.Add(comment);
         }
-        public void EditComment(Comment comment)
-        {
-            var result = _comments.Where(x => x.Id == comment.Id).FirstOrDefault();
-        }
-
     }
 }
