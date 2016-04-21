@@ -1,7 +1,6 @@
 # SheriffGallery
 Photo Gallery for Sheriffen Adventures
-Follow Sheriffen's epic quest around the world. Site will be integrated to Google Maps. Places he has been to will be marked on Map.
-
+Follow Sheriffen's epic quest around the world. Site will be integrated to Google Maps.
 Work in progress. 
 Currently working on backend repositories.
 
