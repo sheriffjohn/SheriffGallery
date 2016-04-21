@@ -10,9 +10,8 @@ namespace Web.Infrastructure.Repository
     public interface IRepository
     {
         bool CreateOrUpdateUser(User user);
-        User ReadUser(int id);
         List<User> ReadUsers();
-        bool DeleteUser(int id);
+        bool DeleteUser(User user);
         bool CreateOrUpdatePhotoItem(PhotoItem item);
         PhotoItem ReadPhotoItem(int id);
         bool DeletePhotoItem(PhotoItem item);

@@ -11,6 +11,17 @@ namespace Web.Tests.IntegrationTest
     [TestFixture]
     public class DbIntegrationTest
     {
+        /****** Script for veirfy results  ******/
+        //select a.*, b.RoleName from[imagegallery].[dbo].[users] a join [imagegallery].[dbo].roles b on a.Role_FK = b.Id
+        //go
+        //select* from[imagegallery].[dbo].photoitems
+        //go
+        //select* from [imagegallery].[dbo].photos
+        //go
+        //select* from [imagegallery].[dbo].comments
+        //go
+        //select* from [imagegallery].[dbo].roles
+
         IRepository _repository;
 
         [SetUp]
@@ -26,10 +37,11 @@ namespace Web.Tests.IntegrationTest
         {
             var context = new EFDbContext();
 
-            User user = new User() { Name = "John" };
+            User user = new User() { Name = "John", Role_FK = (int)Permission.Guest };
             _repository.CreateOrUpdateUser(user);
 
             user.Name = "Jane";
+            user.Role_FK = (int)Permission.Contributor;
 
             _repository.CreateOrUpdateUser(user);
                             
@@ -39,7 +51,17 @@ namespace Web.Tests.IntegrationTest
         [Test]
         public void DeleteUserTest()
         {
-            //Not implemented
+            var userToBeDeleted = _repository.ReadUsers().FirstOrDefault();
+            _repository.DeleteUser(userToBeDeleted);
+
+            var result = _repository.ReadUsers().Where(x => x.Id == userToBeDeleted.Id).SingleOrDefault();
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void ReadUsersTest()
+        {
+            Assert.IsTrue(_repository.ReadUsers().Count() > 0);
         }
 
 
@@ -48,10 +70,10 @@ namespace Web.Tests.IntegrationTest
         {
             //Arrange
             //Setup a PhotoItem
-            var userA = new User() { Id = 1, Name = "Teddy" };
-            var userB = new User() { Id = 2, Name = "Cathrine" };
+            var userA = new User() { Id = 1, Name = "Teddy", Role_FK = (int)Permission.Guest };
+            var userB = new User() { Id = 2, Name = "Cathrine", Role_FK = (int)Permission.Administrator };
 
-            PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "Nice Picture", Country = "USA", Location = "Salt Lake City", Latitude = 1.1, Longitude = 2.2, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
+            PhotoItem photoitem = new PhotoItem() { UserName = userA.Name, Info = "In the Dessert..", Country = "USA", Location = "Salt Lake City", Latitude = 1.1, Longitude = 2.2, TimeStamp = DateTime.Now, Photo = new Photo() { Binary = new byte[] { 1, 0, 1 } } };
             _repository.CreateOrUpdatePhotoItem(photoitem);
 
             var commentA = new Comment() { Text = "What a day!", UserName = userA.Name, TimeStamp = DateTime.Now };
@@ -136,8 +158,7 @@ namespace Web.Tests.IntegrationTest
             
             Assert.IsNull(itemresult);
             Assert.IsEmpty(photoresult);
-            Assert.IsEmpty(commentresult);
-           
+            Assert.IsEmpty(commentresult);           
         }
     }
 }

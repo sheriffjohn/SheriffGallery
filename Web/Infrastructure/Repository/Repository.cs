@@ -56,20 +56,20 @@ namespace Web.Infrastructure.Repository
         {
             return _context.PhotoItems.ToList();
         }
-
-        public User ReadUser(int id)
-        {
-            return _context.Users.Find(id);
-        }
-
+              
         public List<User> ReadUsers()
         {
-            throw new NotImplementedException();
+            return _context.Users.ToList();
         }        
 
-        public bool DeleteUser(int id)
+        public bool DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            if (_context.PhotoItems.Find(user.Id) != null)
+                return false;
+            else return true;
         }
 
         public bool DeletePhotoItem(PhotoItem item)

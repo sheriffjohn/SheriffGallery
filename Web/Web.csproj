@@ -105,11 +105,13 @@
     <Compile Include="Infrastructure\EntityFramework\Mapping\CommentMap.cs" />
     <Compile Include="Infrastructure\EntityFramework\Mapping\PhotoItemMap.cs" />
     <Compile Include="Infrastructure\EntityFramework\Mapping\PhotoMap.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Mapping\RoleMap.cs" />
     <Compile Include="Infrastructure\EntityFramework\Mapping\UserMap.cs" />
     <Compile Include="Infrastructure\Repository\IRepository.cs" />
     <Compile Include="Infrastructure\Repository\Repository.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\PhotoItem.cs" />
     <Compile Include="Models\User.cs" />

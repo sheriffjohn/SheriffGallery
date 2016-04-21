@@ -20,10 +20,15 @@ namespace Web.Infrastructure.EntityFramework.Mapping
                .IsRequired()
                .HasMaxLength(50);
 
+            //Many-to-One
+            this.HasRequired<Role>(p => p.Role)
+                .WithMany()
+                .HasForeignKey(f => f.Role_FK)
+                .WillCascadeOnDelete(false);
+
             // Table & Column Mappings
             this.ToTable("Users");
             this.Property(t => t.Name).HasColumnName("UserName");
-
         }
     }
 }
