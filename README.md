@@ -29,11 +29,6 @@ Currently working on backend repositories.
   </tr>
 </table>
 
-<p align="center">
-    <img align="center" src="https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG" >
-</p>
-
-
 
 
 
