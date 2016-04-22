@@ -16,9 +16,9 @@ Currently working on backend repositories.
 * Web Api
 * Bootstrap CSS
 
-First Header | Second Header | Second Header
+| Web Design | v 1.1
 ------------ | ------------- | -------------
-Content from cell 1 | ![ title ](https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG) | asdds
+                                              | ![ title ](https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG) | 
 
 
 
