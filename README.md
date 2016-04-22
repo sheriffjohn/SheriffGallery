@@ -4,7 +4,7 @@ Follow Sheriffen's epic quest around the world. Site will be integrated to Googl
 Work in progress. 
 Currently working on backend repositories.
 
-#Visual Studio 2015
+* Visual Studio 2015
 * Productivity Tools Installed
 *Nunit3 Test Adapter required to run unit tests: <br>https://visualstudiogallery.msdn.microsoft.com/0da0f6bd-9bb6-4ae3-87a8-537788622f2d
 
