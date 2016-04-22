@@ -16,11 +16,12 @@ Currently working on backend repositories.
 * Web Api
 * Bootstrap CSS
 
-/ | Web Design | v 1.1
------------ | ------ |------
-1 | ![ image](https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG) | 
- 
- 
+<p align="center">
+    <img align="center" src="https://github.com/sheriffjohn/SheriffGallery/blob/master/WebDesign.PNG" >
+</p>
+
+
+
 
 
 
