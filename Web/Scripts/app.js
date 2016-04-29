@@ -1,31 +1,29 @@
-﻿;
-var MyModule = (function (window, undefined) {
+﻿var Module = Module || {};
 
-    function myMethod() {
-        alert('my method');
-    }
 
-    function myOtherMethod() {
-        alert('my other method');
-    }
+window.onload = (function () {
 
-    function AppViewModel() {
-        this.firstName = "Bert";
-        this.lastName = "Bertington";
-
-        ko.applyBindings(new AppViewModel());
-    }
-
-    // explicitly return public methods when this object is instantiated
-    return {
-        someMethod: myMethod,
-        someOtherMethod: myOtherMethod,
-        knockMethod : AppViewModel
+    Module.PatientModel = function () {
+        this.Patient_Name = ko.observable();
+        this.Patient_Address = ko.observable();
     };
-    
-    // Activates knockout.js
-    ko.applyBindings(new AppViewModel());
 
-})(window);
+    Module.PatientViewModel = function () {
+        var patient = ko.observable(),
+        loadPatient = function () {
+            var newModel = new Module.PatientModel();
+            newModel.Patient_Name("John");
+            patient(newModel);
+        };
+        return {
+            patient: patient,
+            loadPatient: loadPatient
+        };
+    }();
+
+    Module.PatientViewModel.loadPatient();
+
+    ko.applyBindings(Module.PatientViewModel);
 
 
+});

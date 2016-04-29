@@ -1,0 +1,321 @@
+﻿@font-face {
+	font-family: 'Droid Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Droid Sans'),
+		local('DroidSans'),
+		url('/data/fonts/DroidSans.ttf')  format('truetype'),
+		url('/data/fonts/DroidSans.woff') format('woff');
+
+}
+
+@font-face {
+	font-family: 'Droid Sans';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		local('Droid Sans Bold'),
+		local('DroidSans-Bold'),
+		url('/data/fonts/DroidSans-Bold.ttf')  format('truetype'),
+		url('/data/fonts/DroidSans-Bold.woff') format('woff');
+}
+
+body {
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	margin: 0;
+	padding: 0;
+}
+
+body, td {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+a {
+	color : #840c42;
+}
+
+h1 {
+	font-size      : 42px;
+	color          : #4d4d4d;
+	text-transform : uppercase;
+}
+
+[onClick] {
+	cursor: pointer;
+}
+
+#header-top {
+	width      : 100%;
+	height     : 25px;
+	background : #000;
+}
+
+#header-logo, #header-open {
+	height : 170px;
+	border : 1px;
+}
+#header-logo {
+	float : left;
+}
+#header-logo img {
+	display : block;
+}
+#header-open {
+	float : right;
+	width : 200px;
+}
+
+#exceptional-times {
+	display     : none;
+	border      : 1px solid #aaa;
+	color       : #222;
+	padding     : 16px;
+	position    : absolute;
+	font-size   : 13px;
+	margin-top  : -16px;
+	margin-left : -4px;
+	z-index     : 1024;
+
+	-webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.51);
+	-moz-box-shadow:    0px 3px 4px 0px rgba(0,0,0,0.51);
+	box-shadow:         0px 3px 4px 0px rgba(0,0,0,0.51);
+
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f0f0f0 0%, #bbbbbb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f0f0f0 0%,#bbbbbb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f0f0f0 0%,#bbbbbb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#bbbbbb',GradientType=0 ); /* IE6-9 */
+}
+
+#exceptional-times td:last-child { 
+	white-space : nowrap;
+}
+
+#header-menu {
+	clear      : both;
+	height     : 44px;
+	background : #840c42;
+}
+
+.header-white-border {
+	height: 3px;
+	background : #fff;
+	-webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.51);
+	-moz-box-shadow:    0px 3px 4px 0px rgba(0,0,0,0.51);
+	box-shadow:         0px 3px 4px 0px rgba(0,0,0,0.51);
+}
+
+#mobile-menu-dropdown {
+	display     : none;
+
+	right       : 10px;
+	border      : 1px solid #aaa;
+	color       : #222;
+	padding     : 16px;
+	position    : absolute;
+	margin-top  : -8px;
+	z-index     : 1024;
+	line-height : 28px;
+
+	font-size      : 16px;
+	text-transform : uppercase;
+	font-weight    : bold;
+
+	-webkit-box-shadow: 0px 5px 16px 6px rgba(0,0,0,0.51);
+	-moz-box-shadow:    0px 5px 16px 6px rgba(0,0,0,0.51);
+	box-shadow:         0px 5px 16px 6px rgba(0,0,0,0.51);
+
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f0f0f0 0%, #bbbbbb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f0f0f0 0%,#bbbbbb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f0f0f0 0%,#bbbbbb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#bbbbbb',GradientType=0 ); /* IE6-9 */
+}
+
+td.menu {
+	padding : 0 16px 0 16px;
+}
+
+td.menu a {
+	white-space     : nowrap;
+	color           : #fff;
+	font-size       : 17px;
+	font-weight     : bold;
+	text-transform  : uppercase;
+	text-decoration : none;
+}
+
+td.menu:first-child {
+	padding-left: 0px;
+}
+
+td.menu:last-child {
+	padding-right : 32px;
+}
+
+td.menu.selected {
+	background : #510728;
+}
+
+td.time {
+	font-size   : 14px;
+	white-space : nowrap;
+}
+
+div.section {
+	float        : left;
+	padding      : 0 24px 0 24px;
+}
+div.section:nth-child(2) { padding-left:  0; }
+div.section:last-child  { padding-right: 0; border-right: 0; }
+div.dotted {
+	float  : left;
+	width  : 2px;
+	height : 50px;
+	background: url('/data/images/dots.png');
+}
+
+.dynamic-clear {
+	clear         : both;
+	height        : 16px;
+}
+
+.cleared-border {
+	border-bottom : 1px solid #666;
+	margin-bottom : 16px;
+}
+
+/*
+ *
+ * Change img_width and img_height
+ * in two places throughout this file
+ * to change car image size
+ *
+ */
+.selector {
+	padding       : 12px;
+	margin-bottom : 32px;
+	width         : 320px;
+
+	-webkit-box-shadow: 5px 3px 4px 0px rgba(0,0,0,0.51);
+	-moz-box-shadow:    5px 3px 4px 0px rgba(0,0,0,0.51);
+	box-shadow:         5px 3px 4px 0px rgba(0,0,0,0.51);
+
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f0f0f0 0%, #bbbbbb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f0f0f0 0%,#bbbbbb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f0f0f0 0%,#bbbbbb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#bbbbbb',GradientType=0 ); /* IE6-9 */
+}
+
+.selector td {
+	font-size: 12px;
+}
+
+.selector td:first-child {
+	font-size:   12px;
+	font-weight: bold;
+}
+
+div.car {
+	width      : 285px; /* img_width */
+	float      : left;
+	background : #eee;
+	font-size  : 14px;
+	border-left : 1px solid #ddd;
+	border-top  : 1px solid #ddd;
+
+	-webkit-box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+	   -moz-box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+	        box-shadow: 3px 3px 3px 0px rgba(50, 50, 50, 0.5);
+}
+
+div.car {
+	margin-right  : 32px;
+	margin-bottom : 16px;
+}
+
+.vertical-center {
+	display        : inline-block;
+	height         : 100%;
+	vertical-align : middle;
+}
+
+div.car img {
+	display        : block;
+	max-height     : 190px; /* img_height */
+}
+
+div.car:last-child {
+	margin-right : 8px;
+}
+
+div.car .data {
+	font-size: 12px;
+}
+
+div.car .data b, div.car a {
+	color : #721b1d;
+}
+
+div.car td.data:first-child {
+	padding-right : 8px;
+}
+
+div.car td.data:first-child {
+	width: 0;
+}
+
+div.car .price {
+	background  : rgba(0, 0, 0, 0.5);
+	color       : #fff;
+	font-weight : bold;
+	padding     : 4px 8px 4px 24px;
+	position    : absolute;
+	margin-top  : -32px;
+}
+
+.car-maker {
+	clear         : both;
+	font-size     : 24px;
+	font-weight   : bold;
+	color         : #840c42;
+
+	padding       : 8px 0 8px 0;
+	border-bottom : 2px solid #840c42;
+	margin-bottom : 32px;
+}
+
+.wrap {
+	background            : #222;
+	position              : relative;
+	width                 : 285px; /* img_width */
+	height                : 190px; /* img_height */
+	/*
+	left                  : 0px;
+	background-position   : 50% 50%;
+	background-size       : cover;
+	background-attachment : scroll;
+	text-align            : center;
+	*/
+}
+
+.container {
+  width    : 100%;
+  height   : 100%;
+  position : relative;
+  /* overflow : hidden; */
+}
+
+.image {
+  width     : 100%;
+  max-width : 100%;
+  margin    : auto;
+  position  : absolute;
+  top       : 0;
+  left      : 0;
+  bottom    : 0;
+  right     : 0;
+}

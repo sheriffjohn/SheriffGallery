@@ -1,30 +1,506 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <meta charset="utf-8" />
-</head>
-<body>
-    <script src="../Scripts/app.js"></script>
+    <link href="../Content/app.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
+
+    <script src="../Scripts/libs/jquery-2.2.3.min.js"></script>
     <script src="../Scripts/libs/knockout-3.4.0.js"></script>
+    <script src="../Scripts/app.js"></script>
+</head>
 
+<body>
+    <div id="header-top"></div>
 
-    <p>First name: <strong data-bind="text: firstName"></strong></p>
-    <p>Last name: <strong data-bind="text: lastName"></strong></p>
+    <!-- Logo {{{ -->
+    <div id="header-logo">
+        <table border=0 cellspacing=0 cellpadding=0 style="width: 100%; height: 170px;">
+            <tr>
+                <td valign="middle" align="center">
+                    <div style="width: 300px; border: 25px solid navy; margin-left: 24px;">
+                        <p style="color: #f0f; text-align: right;">Here be Logo</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- }}} -->
+    <!-- Site Contact {{{ -->
+    <div id="header-open">
+        <table id="header-open" border=0>
+            <tr>
+                <td valign="middle" align="right" style="padding-right: 32px;">
+                    <table border=0 cellspacing=0 cellpadding=0>                       
+                        <tr>
+                            <td colspan=2 style="padding-top: 8px;">
+                                <span style="color: #840c42; font-size: 14px;"><a onClick="$('#exceptional-times').slideDown();">Se avvikande tider</a></span>
+                                <div id="exceptional-times" onClick="$(this).slideUp();">
+                                    hej
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- }}} -->
+    <!-- Menu items {{{ -->
+    <div id="header-menu">
+        <table border=0 cellspacing=0 cellpadding=0 style="height: 44px;">
+            <tr>
+                <td width="100%">
+                    &nbsp;
+                </td>
+                <td id="mobile-menu" valign="middle" align="right" style="display: none;">
+                    <img src="/data/images/menu.svg" style="padding-right: 16px; display: block;" onClick="$('#mobile-menu-dropdown').slideToggle();">
+                </td>
+                <td width=0 class="menu selected"><a class="menu" href="/">Start</a></td>
+                <td width=0 class="menu selected"><a class="menu" href="/">Start</a></td>
+                <td width=0 class="menu selected"><a class="menu" href="/">Start</a></td>
+                <td width=0 class="menu selected"><a class="menu" href="/">Start</a></td>
+            </tr>
+        </table>
+        <div id="mobile-menu-dropdown">
+                            <a style="text-decoration: none;" href="/site/index"      ><span style="color: #840c42">▶&nbsp; Start</span></a><br>
+            <a style="text-decoration: none;" href="/site/showroom"   ><span style="color: #222">▶&nbsp; Showroom</a><br>
+            <a style="text-decoration: none;" href="/site/map"        ><span style="color: #222">▶&nbsp; Hitta hit</a><br>
+            <a style="text-decoration: none;" href="/site/garage"     ><span style="color: #222">▶&nbsp; GC Bilverkstad</a><br>
+        </div>
+    </div>
+    <div id="banner-top-shadow" class="header-white-border"></div>
+    <!-- }}} -->
 
-    <button onclick="MyModule.someMethod()">Try it</button>
-    <button onclick="MyModule.someOtherMethod()">Try it again</button>
-    <button onclick="MyModule.knockMethod()">Knock</button>
- 
-    <script type="text/javascript">
-        function AppViewModel() {
-            this.firstName = "Bert";
-            this.lastName = "Bertington";
-        }
+    <link rel="stylesheet" href="/data/css/index.css">
+    <script type="text/javascript" src="/data/js/index.js"></script>
 
-        // Activates knockout.js
-        ko.applyBindings(new AppViewModel());
-    </script>
+    <!-- Body Item {{{ -->
+    <div id="suzuki">
+        <div style="margin: 0 auto; overflow: hidden; display: table;">
 
+            <div id="suzuki-logo">
+                <a href="http://www.suzukibilar.se/" target="_blank"><img src="/data/images/logo-suzuki.png"></a>
+            </div>
+
+            <div id="suzuki-text" style="">
+                <h1 style="margin: 0 auto 16px auto; padding: 0;">Vi säljer Suzuki</h1>
+                Vi har sålt Suzuki sedan 2010 och har en komplett
+                fullservice-anläggning som tar hand om dig och din
+                bil på bästa sätt, på ett ställe.
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <!-- }}} -->
+    <!-- Campaigns {{{ -->
+    <div id="campaign">
+        <div style="margin: 0 auto; overflow: hidden; display: table;">
+            <h1>Kampanjer</h1>
+        </div>
+        <div style="margin: 0 auto; overflow: hidden; display: table;">
+            <div style="max-width: 400px; margin-bottom: 32px;">
+                Vi har alltid ett par riktigt prisvärda kampanjer på gång!<br>
+                Ta del av våra förmånliga priser och slå till på en ny Suzuki redan idag!
+            </div>
+        </div>
+        <div style="margin: 0 auto; overflow: hidden; display: table;">
+                    <div class="campaign"><a href="/data/images/campaigns/1201616.jpg"><img src="/data/images/campaigns/1201616.jpg"></a></div>
+                    <div class="campaign"><a href="/data/images/campaigns/2SCross1604.jpg"><img src="/data/images/campaigns/2SCross1604.jpg"></a></div>
+                    <div class="campaign"><a href="/data/images/campaigns/3.png"><img src="/data/images/campaigns/3.png"></a></div>
+                    <div class="campaign"><a href="/data/images/campaigns/4.png"><img src="/data/images/campaigns/4.png"></a></div>
+                    <div style="clear: both;"></div>
+        </div>
+    </div>
+    <!-- }}} -->
+    <!-- Opening times {{{ -->
+    <div id="open-times">
+        <div style="max-width: 950px; margin: 0 auto; background: 0; overflow: hidden; display: table;">
+            <h1 style="color: #ccc;">Öppettider</h1>
+
+            <!-- Sales -->
+            <div id="open-1" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td colspan=3><b style="color: #fcc404;">Försäljning</b></td>
+                    </tr>
+                    <tr>
+                        <td>Måndag - Fredag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Lördag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>11:00 - 15:00</td>
+                    </tr>
+                    <tr>
+                        <td>Söndag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+
+                    <!-- Avvikande öppettider -->
+                                    <tr>
+                        <td colspan=3 style="padding-top: 16px;"><b>Avvikande tider</b></td>
+                    </tr>
+                                    <tr>
+                        <td>Kristi himmelsfärds dag 5/5</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+                                    <tr>
+                        <td>Nationaldagen 6/6</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+                                    <tr>
+                        <td>Lördagar 2/7 - 6/8</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Sommarstängt</td>
+                    </tr>
+                                </table>
+            </div>
+
+            <div class="dotted" id="dotted-open-1"><img src="/data/images/blank.gif"></div>
+
+            <!-- Repair -->
+            <div id="open-2" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td colspan=3><b style="color: #fcc404;">Verkstad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Måndag - Fredag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>07:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <td>Lördag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+                    <tr>
+                        <td>Söndag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+
+                    <!-- Avvikande öppettider -->
+                                </table>
+            </div>
+
+            <div class="dotted" id="dotted-open-2"><img src="/data/images/blank.gif"></div>
+
+            <!-- Paint -->
+            <div id="open-3" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td colspan=3><b style="color: #fcc404;">Plåt &amp; Lack</b></td>
+                    </tr>
+                    <tr>
+                        <td>Måndag - Fredag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>07:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <td>Lördag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+                    <tr>
+                        <td>Söndag</td>
+                        <td width=8>&nbsp;</td>
+                        <td>Stängt</td>
+                    </tr>
+
+                    <!-- Avvikande öppettider -->
+                                </table>
+            </div>
+
+            <div class="dotted" id="dotted-open-3"><img src="/data/images/blank.gif"></div>
+
+            <!-- Call for extra opening -->
+            <div id="open-4" class="section dark-background" style="font-size: 13px; background: 0; color: #ccc;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td>
+                            <b style="color: #fcc404;">Övrig tid</b><br>
+                            Ring oss gärna om du vill boka<br>
+                            en provkörning på lördagar och söndagar.
+                            <p><b>031-570 320</b><br>
+                            <b>Hitta hit</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- }}} -->
+    <!-- 3 random cars {{{ -->
+    <div id="random-cars">
+        <div style="max-width: 1320px; margin: 0 auto; overflow: hidden; display: table; padding-left: 48px; padding-right: 48px; text-align: center;">
+            <h1>Ett axplock ur lagret</h1>
+        </div>
+        <div style="margin: 0 auto; overflow: hidden; display: table;">
+            <div id="car-text-1" style="float: left; max-width: 360px; margin-bottom: 32px; margin-right: 32px;">
+                Här visar vi tre slumpvist utvalda bilar från vårt showroom som du hittar hos oss på Orrekulla Industrigata i Hisings Kärra.
+                <p>Kom förbi, ta en kopp kaffe, titta på de bilar som är utställda här och diskutera med våra säljare!
+            </div>
+            <div id="car-text-2" style="float: left; max-width: 360px; margin-bottom: 32px;">
+                Vi har många fler bilar i lager!
+                Ta en titt i vårt virtuella showrum, där har vi alla bilar som finns i lager just nu.
+                <br><br><a href="/site/showroom">Till showrummet!</a>
+            </div>
+        </div>
+
+        <div style="max-width: 1320px; margin: 0 auto; overflow: hidden; display: table;">
+            <div>
+
+                <div class="car" id="car-1" onClick="window.location.href = '/site/car?regno=LDK792';">
+
+                    <div class="wrap">
+                      <div class="container">
+                        <img class="image" src="/site/img?w=285&img=cars/LDK792-1004.jpg">
+                      </div>
+                    </div>
+
+                    <div class="price">89 500 kr</div>
+                    <div style="padding: 8px;">
+                        <div style="min-height: 40px;"><b>Suzuki SX4 2.0 DDis 4x4 Exclusive 135hk </b></div>
+
+                        <table border=0 cellspacing=0 cellpadding=0 width="100%">
+                            <tr>
+                                <td class="data" width=0><b>År</b></td>
+                                <td class="data" width="100%">2011</td>
+                                <td class="data" rowspan=3 align="left" valign="bottom">
+                                    <a href="/site/car?regno=LDK792">Bilder och utrustning</a></td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Färg</b></td>
+                                <td class="data" width="100%">Gråmetallic</td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Mätare</b></td>
+                                <td class="data" width="100%">15769 mil</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="car" id="car-2" onClick="window.location.href = '/site/car?regno=QLZ568';">
+
+                    <div class="wrap">
+                      <div class="container">
+                        <img class="image" src="/site/img?w=285&img=cars/QLZ568-1004.jpg">
+                      </div>
+                    </div>
+
+                    <div class="price">207 900 kr</div>
+                    <div style="padding: 8px;">
+                        <div style="min-height: 40px;"><b>Suzuki Vitara 1.6 Exclusive Diesel</b></div>
+
+                        <table border=0 cellspacing=0 cellpadding=0 width="100%">
+                            <tr>
+                                <td class="data" width=0><b>År</b></td>
+                                <td class="data" width="100%">2016</td>
+                                <td class="data" rowspan=3 align="left" valign="bottom">
+                                    <a href="/site/car?regno=QLZ568">Bilder och utrustning</a></td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Färg</b></td>
+                                <td class="data" width="100%">Horizon orange m[..]</td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Mätare</b></td>
+                                <td class="data" width="100%">0 mil</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="car" id="car-3" onClick="window.location.href = '/site/car?regno=MYA262';">
+
+                    <div class="wrap">
+                      <div class="container">
+                        <img class="image" src="/site/img?w=285&img=cars/MYA262-1004.jpg">
+                      </div>
+                    </div>
+
+                    <div class="price">89 500 kr</div>
+                    <div style="padding: 8px;">
+                        <div style="min-height: 40px;"><b>Suzuki Swift 1.2 Comfort 94hk</b></div>
+
+                        <table border=0 cellspacing=0 cellpadding=0 width="100%">
+                            <tr>
+                                <td class="data" width=0><b>År</b></td>
+                                <td class="data" width="100%">2013</td>
+                                <td class="data" rowspan=3 align="left" valign="bottom">
+                                    <a href="/site/car?regno=MYA262">Bilder och utrustning</a></td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Färg</b></td>
+                                <td class="data" width="100%">Röd</td>
+                            </tr>
+                            <tr>
+                                <td class="data" width=0><b>Mätare</b></td>
+                                <td class="data" width="100%">5330 mil</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>		</div>
+            <div style="clear: both; margin-bottom: 32px;"></div>
+        </div>
+    </div>
+    <!-- }}} -->
+    <!-- Contact {{{ -->
+    <div id="contact">
+        <div style="max-width: 950px; margin: 0 auto; background: 0; overflow: hidden; display: table;">
+            <h1 style="color: #ccc;">Kontakt</h1>
+
+            <!-- SÄLJ, VERKSTAD -->
+            <div id="contact-1" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <!-- FÖRSÄLJNING -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px;"><b style="color: #fcc404;">Försäljning</b></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-570 320</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>info@gotecarlsson.se</b></td>
+                    </tr>
+
+                    <!-- VERKSTAD -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px; padding-top: 16px;"><b style="color: #fcc404;">Verkstad</b></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-57 41 80</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>info@gcbilverkstad.se</b></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--div class="dotted" id="dotted-contact-1"><img src="/data/images/blank.gif"></div-->
+            <div class="dotted" style="background: 0;" id="dotted-contact-1"><img src="/data/images/blank.gif"></div>
+
+            <!-- PLÅT & LACK -->
+            <div id="contact-2" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px;"><b style="color: #fcc404;">Plåt &amp; lack</b></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-55 34 50</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>info@gcbilverkstad.se</b></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="dotted" id="dotted-contact-2"><img src="/data/images/blank.gif"></div>
+
+            <!-- LENNART, LEIF -->
+            <div id="contact-3" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <!-- LENNART -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px;">
+                            <b style="color: #fcc404;">Lennart Karlsson</b><br>
+                            VD
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tel</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-57 03 20</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><a href="mailto:lennart@gotecarlsson.se"><b>lennart@gotecarlsson.se</b></a></td>
+                    </tr>
+
+                    <!-- LEIF -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px; padding-top: 16px;">
+                            <b style="color: #fcc404;">Leif Andersson</b><br>
+                            Försäljningschef
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tel</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-57 97 24</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><a href="mailto:leif@gotecarlsson.se"><b>leif@gotecarlsson.se</b></a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="dotted" style="background: 0;" id="dotted-contact-3"><img src="/data/images/blank.gif"></div>
+
+            <!-- ANNA, PETRA -->
+            <div id="contact-4" class="section dark-background" style="font-size: 13px; background: 0;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <!-- Anna -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px;">
+                            <b style="color: #fcc404;">Anna Carlsson</b><br>
+                            Säljare/marknadsföring
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tel</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-57 97 25</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><a href="mailto:anna@gotecarlsson.se"><b>anna@gotecarlsson.se</b></a></td>
+                    </tr>
+
+                    <!-- Petra -->
+                    <tr>
+                        <td colspan=3 style="padding-bottom: 8px; padding-top: 16px;">
+                            <b style="color: #fcc404;">Petra Nilsson</b><br>
+                            Ekonomi/administration
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tel</td>
+                        <td width=8>&nbsp;</td>
+                        <td><b>031-57 97 28</b></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td width=8>&nbsp;</td>
+                        <td><a href="mailto:petra@gotecarlsson.se"><b>petra@gotecarlsson.se</b></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- }}} -->
 </body>
 </html>

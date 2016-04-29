@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+@{ var allowed = "as";
+   var user = HttpContext.Current.User.ToString();
+ }
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    @if (allowed == "ok")
+    {
+        <p>Yeah you have access!</p>
+    }
+    else
+    {
+        <p>No you dont!</p>
+        <p>@user</p>
+    }
+</body>
+</html>

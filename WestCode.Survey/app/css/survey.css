@@ -1,0 +1,22 @@
+﻿div {
+    color: #f0f;
+    margin: 40px;
+    border: dotted;
+    width: 90%;    
+}
+
+div.nav{
+    clear:both;
+    margin: 0px;
+    width: 100%;
+    color: #ff0000;
+}
+
+#nav{
+    color: aqua;
+    text-align: center;
+}
+
+div.main { 
+    color: #00ff21
+}
